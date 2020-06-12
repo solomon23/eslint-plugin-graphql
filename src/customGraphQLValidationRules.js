@@ -3,7 +3,7 @@ import { GraphQLError, getNamedType } from "graphql";
 export function OperationsMustHaveNames(context) {
   return {
     OperationDefinition(node) {
-      if (!node.name || (node.name[0] == node.name[0].toLowerCase())) {
+      if (!node.name || !node[name][0] || (node.name[0] == node.name[0].toLowerCase())) {
         context.reportError(
           new GraphQLError("All operations must be named", [node])
         );
