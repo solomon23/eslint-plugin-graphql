@@ -5,12 +5,6 @@ export function OperationsMustHaveNames(context) {
     OperationDefinition(node) {
       if (!node.name || (node.name[0] == node.name[0].toLowerCase())) {
         context.reportError(
-          new GraphQLError(
-            "All type names should start with a capital letter",
-            [node]
-          )
-        );) {
-        context.reportError(
           new GraphQLError("All operations must be named", [node])
         );
       }
